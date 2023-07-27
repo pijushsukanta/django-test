@@ -22,7 +22,7 @@ class QuestionFilter(APIView,ResponseController,CursorController):
             if page is None:
                 page = 1
             if 0 > int(choice) > 5:
-                raise Exception("Please Insert Query Parameter")
+                raise Exception("Please Insert valid Query Parameter choice between 1 to 5")
             data = self.__get_read_favourite_query(page,100,choice)
             data = get_paginated_data(int(page),total_page,data,100)
             
